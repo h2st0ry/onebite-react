@@ -6,6 +6,8 @@ import Diary from "./pages/Diary";
 import New from "./pages/New";
 import Notfound from "./pages/Notfound";
 import Edit from "./pages/Edit";
+import Header from "./components/Header";
+import Button from "./components/Button";
 
 const mockData = [
   {
@@ -32,6 +34,14 @@ function App() {
 
   return (
     <>
+      <Header title={"Header"} />
+
+      <Button
+        text={"123"}
+        onClick={() => {
+          console.log("123버튼 클릭");
+        }} />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
