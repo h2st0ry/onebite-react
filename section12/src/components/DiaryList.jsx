@@ -1,5 +1,6 @@
-import Button from "./Button";
 import "./DiaryList.css";
+import Button from "./Button";
+import DiaryItem from "./DiaryItem";
 
 const DiaryList = () => {
     return (
@@ -11,7 +12,9 @@ const DiaryList = () => {
                 </select>
                 <Button text={"새 일기 쓰기"} /> {/*type={"HAPPY"}로 하면 초기 설정 가능*/}
             </div>
-            <div className="list_wrapper"></div>
+            <div className="list_wrapper">
+                <DiaryItem />
+            </div>
         </div>
     )
 };
