@@ -2,7 +2,7 @@ import "./DiaryList.css";
 import Button from "./Button";
 import DiaryItem from "./DiaryItem";
 
-const DiaryList = () => {
+const DiaryList = ({ data }) => {
     return (
         <div className="DiaryList">
             <div className="menu_bar">
@@ -13,7 +13,7 @@ const DiaryList = () => {
                 <Button text={"새 일기 쓰기"} /> {/*type={"HAPPY"}로 하면 초기 설정 가능*/}
             </div>
             <div className="list_wrapper">
-                <DiaryItem />
+                {data.map((item) => <DiaryItem key={item.id} {...item} />)}
             </div>
         </div>
     )

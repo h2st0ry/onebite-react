@@ -12,21 +12,32 @@ import Button from "./components/Button";
 const mockData = [
   {
     id: 1,
-    createdDate: new Date().getTime(),
+    createdDate: new Date("2025-06-29").getTime(),
     emotionId: 1,
     content: "1번 일기 내용",
   },
   {
     id: 2,
-    createdDate: new Date().getTime(),
+    createdDate: new Date("2025-06-28").getTime(),
     emotionId: 2,
     content: "2번 일기 내용",
+  },
+  {
+    id: 3,
+    createdDate: new Date("2025-05-12").getTime(),
+    emotionId: 3,
+    content: "3번 일기 내용",
   }
 ]
 
 function reducer(data, action) {
   return state;
 }
+
+
+
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 
 function App() {
@@ -62,11 +73,6 @@ function App() {
         return state;
     }
   }
-
-
-  const DiaryStateContext = createContext();
-  const DiaryDispatchContext = createContext();
-
 
   // 기존 일기 수정
   const onUpdate = (id, createdDate, emotionId, content) => {
