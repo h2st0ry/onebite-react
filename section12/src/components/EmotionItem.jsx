@@ -1,9 +1,11 @@
 import "./EmotionItem.css";
+import { getEmotionImage } from "../util/get-emotion-image";
 
-const EmotionItem = () => {
+const EmotionItem = ({ emotionId, emotionName }) => {
     return (
         <div>
-            EmotionItem
+            <img src={getEmotionImage(emotionId)} />
+            <div>{emotionName}</div>
         </div>
     );
 };

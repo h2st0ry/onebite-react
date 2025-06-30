@@ -13,7 +13,7 @@ export function getEmotionImage(emotionId) {
     case 1:
       return happy;
     case 2:
-      return angry;
+      return angry; 
     case 3:
       return love;
     case 4:
