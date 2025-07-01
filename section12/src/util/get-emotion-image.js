@@ -13,20 +13,20 @@ export function getEmotionImage(emotionId) {
     case 1:
       return happy;
     case 2:
-      return angry; 
+      return angry;
     case 3:
       return love;
     case 4:
       return passion;
     case 5:
       return sad;
-    case 6:
-      return salty;
-    case 7:
-      return satisfaction;
-    case 8:
-      return soso;
-    case 9:
-      return verysad;
+    // case 6:
+    //   return salty;
+    // case 7:
+    //   return satisfaction;
+    // case 8:
+    //   return soso;
+    // case 9:
+    //   return verysad;
   }
 }
