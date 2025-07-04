@@ -59,7 +59,7 @@ const getStringedDate = (targetDate) => {
     return `${year}-${month}-${date}`;
 };
 
-const Editor = () => {
+const Editor = ({ onSubmit }) => {
 
     const [input, setInput] = useState({
         createdDate: new Date(),
@@ -81,8 +81,9 @@ const Editor = () => {
         });
     };
 
-
-    const emotionId = 1;
+    const onClickSubmitButton = () => {
+        onSubmit(input);
+    }
 
     return (
         <div className="Editor">
@@ -98,17 +99,30 @@ const Editor = () => {
                 <h4>오늘의 감정</h4>
                 <div className="emotion_list_wrapper">
                     {emotionList.map((item) => (
-                        <EmotionItem key={item.emotionId} {...item} isSelected={item.emotionId === emotionId} />
+                        <EmotionItem
+                            onClick={() => onChangeInput({
+                                target: {
+                                    name: "emotionId",
+                                    value: item.emotionId,
+                                },
+                            })}
+                            key={item.emotionId} {...item} isSelected={item.emotionId === input.emotionId} />
                     ))}
                 </div>
             </section>
             <section className="content_section">
                 <h4>오늘의 일기</h4>
-                <textarea placeholder="오늘의 감정은 어땠나요?" />
+                <textarea
+                    name="content"
+                    value={input.content}
+                    onChange={onChangeInput}
+                    placeholder="오늘의 감정은 어땠나요?" />
             </section>
             <section className="button_section">
                 <Button text={"취소하기"} />
-                <Button text={"작성완료"} />
+                <Button
+                    onClick={onClickSubmitButton}
+                    text={"작성완료"} />
             </section>
         </div>)
 };
